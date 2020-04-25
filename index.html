@@ -1,27 +1,275 @@
 <!DOCTYPE html>
-<html>
+
+<html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <title>有为派</title>
+
+<meta charset="UTF-8">
+
+<style>
+
+*/*通配符*/{
+
+margin:0;
+
+padding:0;/*内边距*/
+
+}
+
+body{
+
+background:url("https://images2.alphacoders.com/598/598673.jpg")
+
+}
+
+#nav{
+
+width:950px;
+
+height:500px;
+
+/*background:#933; 意思是99 33 33*/
+
+background:rgba(0,0,0,0);
+
+margin:100px auto;
+
+}
+
+#nav ul li{
+
+position:relative;
+
+list-style:none;/*去除前面的小黑点*/
+
+float:left;
+
+width:180px;
+
+height:105px;
+
+background:rgba(0,0,0,0.5);/*最后一个是透明0-1*/
+
+margin:30px 5px;
+
+}
+
+#nav ul li.six{
+
+margin-left:100px;
+
+}
+
+/*#nav ul li div{
+
+position:absolute;（跟着父类及父类网上的relative/absolute/fixed走）（相对于拥有定位属性（刚才三个）的最近的父元素定位，如果所有的父元素都没有定位属性就相对于文档来定位）
+
+left:0;
+
+top:0; 
+
+width:180px;
+
+height:105px;
+
+background:rgba(0,0,0,0.5);
+
+}
+
+.left{
+
+transform:rotate(60deg);
+
+}
+
+.right{
+
+transform:rotate(-60deg);
+
+}*/
+
+#nav ul li:before,#nav ul li:after{/*css伪类,在标签内容之前添加的内容(li)*/
+
+content:"";/*这个statement不能省略*/
+
+position:absolute;
+
+left:0;
+
+top:0;
+
+width:180px;
+
+height:105px;
+
+background:rgba(0,0,0,0.5);
+
+transform:rotate(60deg);
+
+}
+
+#nav ul li:after{
+
+transform:rotate(-60deg);
+
+}
+
+#nav ul li img:hover{
+
+transform:rotate(360deg) scale(1.4);
+
+transition:0.5s;
+
+}
+
+#nav ul li:hover{
+
+transform:scale(1.4);
+
+}
+
+#nav ul li img{
+
+position:absolute;
+
+left:0;
+
+top:0;
+
+right:0;
+
+bottom:0;
+
+margin:auto;
+
+z-index:10;/*越大越往前*/
+
+}
+
+</style>
+
+<title>Insert title here</title>
+
 </head>
-   <h1 style="text-align: center;">我收藏的网站</h1>
+
 <body>
-   theme: jekyll-theme-merlot
-   <h1 style="text-align: center;">opencv+python教程：https://github.com/ex2tron/OpenCV-Python-Tutorial</h1>
-   <h1 style="text-align: center;">科学上网教程安卓版：https://wiki.kache.moe/</h1>
-   <h1 style="text-align: center;">ubuntu16.04安装opencv教程：https://qiyuan-z.github.io/2020/01/19/ubuntu16.04%E5%AE%89%E8%A3%85opencv%E6%95%99%E7%A8%8B/#more</h1>
-   <h1 style="text-align: center;">
-路由器科学上网教程：
-1、打开【控制面板】——【程序和功能】——【启动或关闭Windows功能】——勾选【telnet客户端】
-2、刷breed（链接：https://pan.baidu.com/s/1-TVYwwIYLRp9PLUZh-OiQg 提取码：7bo5，链接失效可以联系zhaohaowuu@qq.com），解压，右键管理员方式运行【路由器刷breed_Web控制台助手v5.9版本.exe】，打开软件后不要更改内容，点下【开始刷机】后等待
-3、软件显示【刷机完成】后，等待2分钟后拔掉路由器电源
-4、在断电状态下，按住路由器后面的reset按钮不放，插上电源，持续按住10秒左右，再松开按钮，等待1分钟
-5、浏览器访问 192.168.1.1 进入到Breed Web控制台界面
-6、点击【固件备份】，即可选择备份【EEEPROM】和【编程器固件】
-7、点击【恢复出厂设置】->【Config 区 (公版)】，然后点【执行】
-8、点击【恢复固件】-【固件】-【浏览】，选择老毛子华硕固件，后缀是.trx的文件(在第二步那个压缩包里面)，勾选自动重启，然后点击上传
-9、等待路由器刷机成功并重启后，浏览器打开192.168.123.1，用户名密码则均是admin，刷机完成
-10、点击【网络地图】，再点击小飞机图标，【代理方案】选择方案2，【代理类型】选择ssr，点击【应用本页面设置】，导入ssr链接，点击【应用本页面设置】
-    </h1>
+
+<div id="nav"><!-- css样式来修饰div的宽度 高度 位置 边框,这个id不可重复 -->
+
+<ul>
+
+<li>
+
+<a href=https://www.google.ca target="_blank">
+
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/1200px-Google_2015_logo.svg.png" 
+
+style="width: 180px;"></a>
+
+</li>
+
+<li>
+
+<a href=https://www.amazon.ca target="_blank">
+
+<img src="https://www.tacomaschools.org/geiger/PublishingImages/Pages/Amazon-Affiliate/amazon.png" 
+
+style="width: 180px;"></a>
+
+</li>
+
+<li>
+
+<a href=https://www.baidu.com target="_blank">
+
+<img src="https://upload.wikimedia.org/wikipedia/en/thumb/f/f4/Baidu.svg/1200px-Baidu.svg.png" 
+
+style="width: 170px;"></a>
+
+</li>
+
+<li>
+
+<a href=https://www.taobao.com target="_blank">
+
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/dc/Taobao_Logo.svg/1200px-Taobao_Logo.svg.png" 
+
+style="width: 170px;"></a>
+
+</li>
+
+<li>
+
+<a href=https://www.youtube.com target="_blank">
+
+<img src="http://logok.org/wp-content/uploads/2017/05/YouTube-logo-2017-logotype.png" 
+
+style="width: 180px;"></a>
+
+</li>
+
+<li class = "six"><!-- 可重复的 -->
+
+<a href=https://www.bilibili.com target="_blank">
+
+<img src="http://www.asiatvforum.com/RXSG/RXSG_ATF_v2/2017/media/insights/oct2017/the-new-radical/bilibili%20logo.png?v=636433038808896003" 
+
+style="width: 160px;"></a>
+
+</li>
+
+<li>
+
+<img src="">
+
+</li>
+
+<li>
+
+<img src="">
+
+</li>
+
+<li>
+
+<img src="">
+
+</li>
+
+<li>
+
+<img src="">
+
+</li>
+
+<li>
+
+<img src="">
+
+</li>
+
+<li>
+
+<img src="">
+
+</li>
+
+<li>
+
+<img src="">
+
+</li>
+
+<li>
+
+<img src="">
+
+</li>
+
+</ul>
+
+</div>
+
 </body>
+
 </html>
