@@ -1,100 +1,181 @@
-<!DOCTYPE HTML>
-<!-- dear小王子的博客 -->
-<html>
+<!DOCTYPE html>
+<html lang="zh-CN">
 
 <head>
     <meta charset="UTF-8">
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,italic,700,400,600' rel='stylesheet'
-        type='text/css'>
-    <link rel="stylesheet" type="text/css" href="style.css" />
-    <title>dear小王子的博客</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="zhaohaowu 的个人资源导航页，整合常用软件下载、教程链接、手写笔记和黑马 C++ 学习笔记。">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Noto+Serif+SC:wght@500;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>zhaohaowu | 资源与笔记导航</title>
 </head>
 
 <body>
-    <div class="page">
-        <h1>小软件</h1>
-        <div class="pub_list">
-            <p>
-                <a href="software/Clash for Android.apk">安卓版clash</a>
-                &nbsp;&nbsp;
-                <a href="software/Clash for Ubuntu.7z">Ubuntu版clash</a>
-                &nbsp;&nbsp;
-                <a href="software/Clash for Windows.exe">Windows版clash</a>
-                &nbsp;&nbsp;
-                <a href="Ssr for Android.deb">安卓版ssr</a>
-                &nbsp;&nbsp;
-                <a href="Ssr for Ubuntu.deb">Ubuntu版ssr</a>
-                &nbsp;&nbsp;
-                <a href="software/Ssr for Windows.rar">Windows版ssr</a>
-            </p>
-            <p>
-                <a href="software/PotPlayerSetup64.exe">PotPlayer</a>
-                &nbsp;&nbsp;
-                <a href="software/WinRAR.exe">WinRAR</a>
-                &nbsp;&nbsp;
-                <a href="software/crack for windows and office.exe">windows和office激活工具</a>
-                &nbsp;&nbsp;
-                <a href="software/ocr.rar">天若OCR</a>
-                &nbsp;&nbsp;
-                <a href="software/SpaceSniffer.exe">SpaceSniffer</a>
-                &nbsp;&nbsp;
-                <a href="software/DiskGenius.exe">DiskGenius</a>
-                &nbsp;&nbsp;
-                <a href="software/MathType7.7z">MathType7</a>
-                &nbsp;&nbsp;
-                <a href="software/Everything.exe">Everything</a>
-                &nbsp;&nbsp;
-                <a href="software/vscode.exe">vscode</a>
-                &nbsp;&nbsp;
-                <a href="software/DownKyi.7z">DownKyi</a>
-                &nbsp;&nbsp;
-                <a href="software/bandicam6.7z">bandicam</a>
-                &nbsp;&nbsp;
-                <a href="software/idm.rar">idm</a>
-            </p>
-        </div>
-    </div>
-    <div class="page">
-        <h1>软件安装网站</h1>
-        <div class="pub_list">
-            <p>
-                <a href="https://getintopc.com/">get into pc</a>
-            </p>
-            <p>
-                <a href="https://mp.weixin.qq.com/s/qu00O6fksmJjcPUo8wJMNg">软件安装管家</a>
-            </p>
-            <p>
-                <a href="https://dogess.wtf/auth/register?code=NChu">机场</a>
-            </p>
-        </div>
-    </div>
-    <div class="page">
-        <h1>手写笔记</h1>
-        <div class="pub_list">
-            <p>
-                <a href="image/aruco_test.jpg">aruco_test</a>
-            </p>
-        </div>
-        <div class="pub_list">
-            <p>
-                <a href="https://zhaohaowu.github.io/algorithm/dijkstra">dijkstra</a>
-            </p>
-        </div>
-        <div class="pub_list">
-            <p>
-                <a href="https://zhaohaowu.github.io/tutorial/clash">clash在ubuntu系统使用教程</a>
-            </p>
-        </div>
-        <div class="pub_list">
-            <p>
-                <a href="https://github.com/zhaohaowu/zhaohaowu.github.io">我的github地址</a>
-            </p>
-        </div>
-        <div class="pub_list">
-            <p>
-                <a href="https://zhaohaowu.github.io/video">求婚视频</a>
-            </p>
-        </div>
+    <div class="site-shell">
+        <header class="hero page">
+            <div class="hero-copy">
+                <p class="eyebrow">zhaohaowu.github.io</p>
+                <h1>资源、教程与学习笔记入口</h1>
+                <p class="hero-text">
+                    把常用软件下载、外部工具站点、手写笔记和黑马 C++ 三阶段学习内容放到一个首页里，减少来回跳转。
+                </p>
+                <div class="hero-actions">
+                    <a class="button button-primary" href="#heima">查看黑马笔记</a>
+                    <a class="button button-secondary" href="#software">常用软件下载</a>
+                    <a class="button button-secondary" href="https://github.com/zhaohaowu/zhaohaowu.github.io">GitHub</a>
+                </div>
+            </div>
+            <div class="hero-panel">
+                <div class="mini-card">
+                    <span class="mini-label">重点内容</span>
+                    <strong>黑马 C++ 三阶段</strong>
+                    <p>基础、核心、提高三套 HTML 笔记已整合到首页入口。</p>
+                </div>
+                <div class="mini-card">
+                    <span class="mini-label">常用资源</span>
+                    <strong>软件下载 + 教程入口</strong>
+                    <p>代理工具、效率软件、教程文章和算法页面都集中在下面。</p>
+                </div>
+            </div>
+        </header>
+
+        <main class="site-main">
+            <section class="page section" id="heima">
+                <div class="section-head">
+                    <p class="section-kicker">Featured Notes</p>
+                    <h2>黑马 C++ 学习笔记</h2>
+                    <p>首页直接整合三个阶段的入口，点进去就是生成好的完整 HTML 笔记。</p>
+                </div>
+                <div class="feature-grid">
+                    <article class="feature-card">
+                        <span class="card-tag">Stage 01</span>
+                        <h3>基础</h3>
+                        <p>变量、常量、数据类型、运算符、流程控制、数组、函数、指针与结构体。</p>
+                        <div class="card-actions">
+                            <a class="text-link" href="黑马/基础/index.html">打开基础笔记</a>
+                        </div>
+                    </article>
+                    <article class="feature-card">
+                        <span class="card-tag">Stage 02</span>
+                        <h3>核心</h3>
+                        <p>内存模型、引用、函数提高、类与对象、运算符重载、继承、多态和文件操作。</p>
+                        <div class="card-actions">
+                            <a class="text-link" href="黑马/核心/index.html">打开核心笔记</a>
+                        </div>
+                    </article>
+                    <article class="feature-card">
+                        <span class="card-tag">Stage 03</span>
+                        <h3>提高</h3>
+                        <p>模板、STL 容器、迭代器、算法与泛型编程，适合继续往工程实践推进。</p>
+                        <div class="card-actions">
+                            <a class="text-link" href="黑马/提高/index.html">打开提高笔记</a>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <section class="page section" id="notes">
+                <div class="section-head">
+                    <p class="section-kicker">Notes & Projects</p>
+                    <h2>手写笔记与站内内容</h2>
+                </div>
+                <div class="link-grid">
+                    <a class="resource-card" href="image/aruco_test.jpg">
+                        <strong>aruco_test</strong>
+                        <span>本地图像笔记</span>
+                    </a>
+                    <a class="resource-card" href="https://zhaohaowu.github.io/algorithm/dijkstra">
+                        <strong>dijkstra</strong>
+                        <span>算法页面</span>
+                    </a>
+                    <a class="resource-card" href="https://zhaohaowu.github.io/tutorial/clash">
+                        <strong>clash 在 Ubuntu 系统使用教程</strong>
+                        <span>教程页面</span>
+                    </a>
+                    <a class="resource-card" href="https://zhaohaowu.github.io/video">
+                        <strong>求婚视频</strong>
+                        <span>站内独立页面</span>
+                    </a>
+                    <a class="resource-card" href="c++/index.html">
+                        <strong>C++ 资料页</strong>
+                        <span>旧版 C++ 页面入口</span>
+                    </a>
+                    <a class="resource-card" href="https://github.com/zhaohaowu/zhaohaowu.github.io">
+                        <strong>GitHub 仓库</strong>
+                        <span>源码与页面托管</span>
+                    </a>
+                </div>
+            </section>
+
+            <section class="page section" id="software">
+                <div class="section-head">
+                    <p class="section-kicker">Downloads</p>
+                    <h2>常用软件下载</h2>
+                    <p>保留原来的下载资源，按用途整理成两个组。</p>
+                </div>
+                <div class="software-layout">
+                    <div class="software-block">
+                        <h3>代理与网络工具</h3>
+                        <div class="chip-list">
+                            <a href="software/Clash for Android.apk">Clash for Android</a>
+                            <a href="software/Clash for Ubuntu.7z">Clash for Ubuntu</a>
+                            <a href="software/Clash for Windows.exe">Clash for Windows</a>
+                            <a href="software/Ssr for Android.apk">SSR for Android</a>
+                            <a href="software/Ssr for Ubuntu.deb">SSR for Ubuntu</a>
+                            <a href="software/Ssr for Windows.rar">SSR for Windows</a>
+                            <a href="software/putty-64bit-0.76-installer.msi">PuTTY</a>
+                        </div>
+                    </div>
+                    <div class="software-block">
+                        <h3>效率与系统工具</h3>
+                        <div class="chip-list">
+                            <a href="software/PotPlayerSetup64.exe">PotPlayer</a>
+                            <a href="software/WinRAR.exe">WinRAR</a>
+                            <a href="software/crack for windows and office.exe">Windows / Office 激活工具</a>
+                            <a href="software/ocr.rar">天若 OCR</a>
+                            <a href="software/SpaceSniffer.exe">SpaceSniffer</a>
+                            <a href="software/DiskGenius.exe">DiskGenius</a>
+                            <a href="software/MathType7.7z">MathType 7</a>
+                            <a href="software/Everything.exe">Everything</a>
+                            <a href="software/vscode.exe">VS Code</a>
+                            <a href="software/DownKyi.7z">DownKyi</a>
+                            <a href="software/Bandicam6.7z">Bandicam</a>
+                            <a href="software/idm.rar">IDM</a>
+                            <a href="software/geek.exe">Geek Uninstaller</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="page section" id="links">
+                <div class="section-head">
+                    <p class="section-kicker">External Links</p>
+                    <h2>软件安装网站</h2>
+                </div>
+                <div class="link-grid">
+                    <a class="resource-card" href="https://getintopc.com/">
+                        <strong>get into pc</strong>
+                        <span>软件下载站点</span>
+                    </a>
+                    <a class="resource-card" href="https://mp.weixin.qq.com/s/qu00O6fksmJjcPUo8wJMNg">
+                        <strong>软件安装管家</strong>
+                        <span>微信文章入口</span>
+                    </a>
+                    <a class="resource-card" href="https://dogess.wtf/auth/register?code=NChu">
+                        <strong>机场</strong>
+                        <span>外部服务入口</span>
+                    </a>
+                </div>
+            </section>
+        </main>
+
+        <footer class="site-footer">
+            <p>zhaohaowu.github.io</p>
+        </footer>
     </div>
 </body>
 

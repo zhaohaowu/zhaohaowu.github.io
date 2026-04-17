@@ -1,194 +1,384 @@
-/* standard elements */
-a
-{
-    color: #00a3cc;
+:root {
+    --bg: #f4efe7;
+    --bg-strong: #eadfce;
+    --surface: rgba(255, 251, 245, 0.84);
+    --surface-strong: #fffdf9;
+    --text: #17212b;
+    --muted: #5b6773;
+    --line: rgba(23, 33, 43, 0.1);
+    --accent: #b65a2e;
+    --accent-dark: #8f431f;
+    --accent-soft: rgba(182, 90, 46, 0.12);
+    --shadow: 0 20px 50px rgba(73, 46, 28, 0.12);
+    --radius-xl: 28px;
+    --radius-lg: 22px;
+    --radius-md: 16px;
+    --max-width: 1180px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    color: var(--text);
+    font-family: "Manrope", "PingFang SC", "Microsoft YaHei", sans-serif;
+    background:
+        radial-gradient(circle at top left, rgba(182, 90, 46, 0.16), transparent 26rem),
+        radial-gradient(circle at bottom right, rgba(33, 86, 123, 0.1), transparent 24rem),
+        linear-gradient(180deg, #f6f0e7 0%, #ece4d8 100%);
+}
+
+a {
+    color: inherit;
     text-decoration: none;
-    font-weight: 600;
 }
 
-a:hover
-{
-    text-decoration: none;
-    color: #00ccff;
-}
-
-b
-{
-  font-weight: 600;
-}
-
-body
-{
-    background-color:#D8D8D8;
-    font-family: 'Open Sans', 'Helvetica Neue', sans-serif;
-    color: #000000;
-    margin: 0px;
-    padding: 0px;
+img {
     max-width: 100%;
-    font-weight: normal;
-    background-color: #eee;
-    font-size: 1em;
+    display: block;
 }
 
-h1
-{
-    font-family: 'Open Sans', sans-serif;
-    font-weight: 400;
-    font-size: 2em;
-    padding: 0.2em;
-    margin: 0em;
-    text-align: center;
+h1,
+h2,
+h3,
+p {
+    margin: 0;
 }
 
-h2
-{
-    font-family: 'Open Sans', sans-serif;
-    font-weight: 400;
-    font-size: 1.5em;
-    padding: 0.2em;
-    margin: 0em;
-    text-align: left;
+.site-shell {
+    width: min(100%, 1440px);
+    margin: 0 auto;
+    padding: 24px 16px 48px;
 }
 
-iframe {
-  margin: 0.5em;
-}
-
-/* Break up into pages/sections. Style taken from
-https://github.com/delight-im/HTML-Sheets-of-Paper */
 .page {
-  /* Styles for better appearance on screens only -- are reset to defaults in print styles later */
-
-  /* Divide single pages with some space and center all pages horizontally */
-  /*margin: 10em auto; */
-  /* Define a white paper background that sticks out from the darker overall background */
-  background: #fff;
-  /* Show a drop shadow beneath each page */
-  box-shadow: 0 4px 5px rgba(75, 75, 75, 0.2);
-
-  /* More specific settings. */
-  text-align: left;
-  width: 90%;
-  max-width: 900px;
-  margin: 1em auto 1em auto;
-  padding: 1em 2em 1em 2em;
+    width: min(var(--max-width), 100%);
+    margin: 0 auto 20px;
+    border: 1px solid rgba(255, 255, 255, 0.52);
+    border-radius: var(--radius-xl);
+    background: var(--surface);
+    box-shadow: var(--shadow);
+    backdrop-filter: blur(12px);
 }
 
-.intro {
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: left;
-  max-width: 100%;
-  vertical-align: top;
-}
-
-.portrait {
-  flex-grow: 0;
-  flex-shrink: 0.5;
-  vertical-align: top;
-  margin-right: 2em;
-  padding: 1em 2em 1em 0em;
-  width: 300px;
-  overflow: hidden;
-}
-
-.portrait img {
-  width: auto;
-  max-width: 100%;
-  min-width: 100px;
-  overflow: hidden;
-}
-
-.intro_text {
-  flex-grow: 4;
-  flex: 50%;
-  vertical-align: top;
-}
-
-.pub_list {
-  margin-left: 5%;
-}
-
-/* Content - Everything in the now white box. */
-.content
-{
-    /*background-color: #FFFFFF;
-    border: 2px solid #cccccc;
-    margin: 0px auto 20px auto;
-    padding: 10px 20px 10px 20px; */
-    font-size: 1em;
-    overflow: auto;
-}
-
-.content hr
-{
-    border: 0px;
-    height: 2px;
-    width: 100%;
-    background: #AAA;
-}
-.content p
-{
-    margin-top: 0px;
-}
-
-/* Project tag. */
-.project
-{
-    clear: both;
-    padding-bottom: 20px;
+.hero {
+    display: grid;
+    grid-template-columns: minmax(0, 1.5fr) minmax(280px, 0.9fr);
+    gap: 22px;
+    padding: 34px;
     overflow: hidden;
+    position: relative;
 }
 
-.project-left
-{
-    clear: both;
-    padding-bottom: 20px;
-    overflow: hidden;
+.hero::after {
+    content: "";
+    position: absolute;
+    inset: auto -80px -110px auto;
+    width: 260px;
+    height: 260px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(182, 90, 46, 0.18), transparent 70%);
+    pointer-events: none;
 }
 
-.project-left img
-{
-    float: left;
-    /* TRBL */
-    margin: 5px 20px 5px 5px;
-    min-width: 150px;
+.hero-copy,
+.hero-panel,
+.section,
+.resource-card,
+.feature-card,
+.software-block {
+    position: relative;
+    z-index: 1;
 }
 
-.project-right
-{
-    clear: both;
-    padding-bottom: 20px;
-    overflow: hidden;
+.eyebrow,
+.section-kicker,
+.mini-label,
+.card-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.8rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent);
 }
 
-.project-right img
-{
-    float: right;
-    margin: 5px 5px 5px 20px;
+.hero h1 {
+    margin-top: 10px;
+    font-family: "Noto Serif SC", "Songti SC", serif;
+    font-size: clamp(2.4rem, 5vw, 4.4rem);
+    line-height: 1.08;
+    max-width: 11ch;
 }
 
-.title
-{
-    font-weight: 600;
+.hero-text {
+    margin-top: 18px;
+    max-width: 58ch;
+    font-size: 1.04rem;
+    line-height: 1.8;
+    color: var(--muted);
 }
 
-.project p
-{
-    padding-top: 0.5em;
+.hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 26px;
 }
 
-.title_row
-{
-    padding-bottom: 0.5em;
-    margin-bottom: 0;
+.button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 48px;
+    padding: 0 18px;
+    border-radius: 999px;
+    font-weight: 700;
+    transition: transform 0.18s ease, box-shadow 0.18s ease, background-color 0.18s ease;
 }
 
-/* Footer */
-.footer
-{
-    margin: 5px auto 5px auto;
+.button:hover,
+.text-link:hover,
+.chip-list a:hover,
+.resource-card:hover,
+.feature-card:hover {
+    transform: translateY(-2px);
+}
+
+.button-primary {
+    background: var(--accent);
+    color: #fff7f1;
+    box-shadow: 0 12px 30px rgba(182, 90, 46, 0.26);
+}
+
+.button-primary:hover {
+    background: var(--accent-dark);
+}
+
+.button-secondary {
+    background: rgba(255, 255, 255, 0.72);
+    border: 1px solid rgba(182, 90, 46, 0.18);
+    color: var(--text);
+}
+
+.hero-panel {
+    display: grid;
+    gap: 14px;
+    align-content: center;
+}
+
+.mini-card {
+    padding: 20px 20px 18px;
+    border-radius: var(--radius-lg);
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.95), rgba(255, 248, 239, 0.82));
+    border: 1px solid rgba(182, 90, 46, 0.1);
+}
+
+.mini-card strong {
+    display: block;
+    margin-top: 8px;
+    font-size: 1.1rem;
+}
+
+.mini-card p {
+    margin-top: 10px;
+    color: var(--muted);
+    line-height: 1.7;
+}
+
+.site-main {
+    display: grid;
+    gap: 0;
+}
+
+.section {
+    padding: 30px 34px 34px;
+}
+
+.section-head {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 22px;
+}
+
+.section-head h2 {
+    font-family: "Noto Serif SC", "Songti SC", serif;
+    font-size: clamp(1.8rem, 3vw, 2.7rem);
+    line-height: 1.18;
+}
+
+.section-head p:last-child {
+    color: var(--muted);
+    line-height: 1.75;
+}
+
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+}
+
+.feature-card,
+.resource-card,
+.software-block {
+    border-radius: var(--radius-lg);
+    background: rgba(255, 255, 255, 0.72);
+    border: 1px solid var(--line);
+}
+
+.feature-card {
+    padding: 22px;
+}
+
+.feature-card h3 {
+    margin-top: 12px;
+    font-size: 1.45rem;
+}
+
+.feature-card p {
+    margin-top: 12px;
+    color: var(--muted);
+    line-height: 1.78;
+    min-height: 6em;
+}
+
+.card-actions {
+    margin-top: 18px;
+}
+
+.text-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 800;
+    color: var(--accent);
+}
+
+.text-link::after {
+    content: "→";
+}
+
+.link-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 14px;
+}
+
+.resource-card {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    min-height: 142px;
+    padding: 20px;
+    transition: transform 0.18s ease, border-color 0.18s ease, box-shadow 0.18s ease;
+}
+
+.resource-card:hover,
+.feature-card:hover,
+.chip-list a:hover {
+    border-color: rgba(182, 90, 46, 0.28);
+    box-shadow: 0 12px 30px rgba(73, 46, 28, 0.08);
+}
+
+.resource-card strong {
+    font-size: 1.05rem;
+    line-height: 1.55;
+}
+
+.resource-card span {
+    color: var(--muted);
+    line-height: 1.65;
+}
+
+.software-layout {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+}
+
+.software-block {
+    padding: 22px;
+}
+
+.software-block h3 {
+    font-size: 1.2rem;
+}
+
+.chip-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 16px;
+}
+
+.chip-list a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 42px;
+    padding: 0 14px;
+    border-radius: 999px;
+    background: var(--surface-strong);
+    border: 1px solid rgba(182, 90, 46, 0.14);
+    color: var(--text);
+    font-size: 0.96rem;
+    transition: transform 0.18s ease, border-color 0.18s ease, background-color 0.18s ease;
+}
+
+.chip-list a:hover {
+    background: #fff6ef;
+}
+
+.site-footer {
+    width: min(var(--max-width), 100%);
+    margin: 8px auto 0;
     text-align: center;
-    font-size: 1em;
-    color: #666666;
+    color: var(--muted);
+    font-size: 0.95rem;
+}
+
+@media (max-width: 980px) {
+    .hero,
+    .feature-grid,
+    .link-grid,
+    .software-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .hero h1 {
+        max-width: none;
+    }
+}
+
+@media (max-width: 720px) {
+    .site-shell {
+        padding: 12px 10px 28px;
+    }
+
+    .hero,
+    .section {
+        padding: 22px 18px;
+    }
+
+    .hero-actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .button {
+        width: 100%;
+    }
+
+    .resource-card {
+        min-height: 0;
+    }
 }
